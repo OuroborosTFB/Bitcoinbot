@@ -1,15 +1,24 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"time"
 
 	"github.com/OuroborosTFB/Bitcoinbot/config"
 	"github.com/OuroborosTFB/Bitcoinbot/handler"
+	"github.com/OuroborosTFB/Bitcoinbot/utils"
 	tb "gopkg.in/tucnak/telebot.v2"
 )
 
 func main() {
+	//startBot()
+	convertedprice, _ := utils.GetConvertedPriceAPI(500000)
+	fmt.Println(convertedprice)
+
+}
+
+func startBot() {
 
 	b, err := tb.NewBot(tb.Settings{
 		// You can also set custom API URL.

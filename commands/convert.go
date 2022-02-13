@@ -8,12 +8,12 @@ import (
 	tb "gopkg.in/tucnak/telebot.v2"
 )
 
-func GetHistoric() (string, *tb.Animation, error) {
+func GetConvertedPrice() (string, *tb.Animation, error) {
 	price, err := utils.GetPriceAPI()
 	last := price.Last
 	buy := price.Buy
-	his := ((last - buy) / buy) * 100
-	if !math.Signbit(float64(his)) {
+	history := ((last - buy) / buy) * 100
+	if !math.Signbit(float64(history)) {
 		g := &tb.Animation{File: tb.FromURL("https://i.pinimg.com/originals/e4/38/99/e4389936b099672128c54d25c4560695.gif")}
 		return "%" + fmt.Sprintf("%.2f", ((last-buy)/buy)*100), g, err
 	} else {
