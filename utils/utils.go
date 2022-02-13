@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/tomassirio/bitcoinTelegram/model"
+	"github.com/OuroborosTFB/Bitcoinbot/model"
 )
 
 func GetApiCall() (*model.Price, error) {

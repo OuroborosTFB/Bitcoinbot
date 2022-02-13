@@ -1,7 +1,6 @@
 package handler
 
 import (
-	"github.com/tomassirigo/bitcoinTelegram/commands"
 	tb "gopkg.in/tucnak/telebot.v2"
 )
 

@@ -1,4 +1,4 @@
-module github.com/tomassirio/BitcoinTelegram
+module github.com/OuroborosTFB/Bitcoinbot
 
 go 1.17
 
