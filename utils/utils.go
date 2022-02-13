@@ -2,19 +2,29 @@ package utils
 
 import (
 	"encoding/json"
+	"io/ioutil"
 	"net/http"
 
-	"github.com/OuroborosTFB/Bitcoinbot/model"
+	"github.com/OuroborosTFB/Bitcoinbot/models"
 )
 
-func GetApiCall() (*model.Price, error) {
-	resp, err := http.Get("https://bitex.la/api-v1/rest/btc_usd/market/ticker")
-	p := &model.Price{}
+type Result struct {
+	Price models.Price `json:"USD"`
+}
+
+func GetPriceAPI() (*models.Price, error) {
+	resp, err := http.Get("https://blockchain.info/ticker")
+	price := &models.Price{}
 
 	if err != nil {
-		return p, err
+		return price, err
 	}
+	body, err := ioutil.ReadAll(resp.Body)
 
-	err = json.NewDecoder(resp.Body).Decode(p)
-	return p, err
+	var result Result
+	json.Unmarshal(body, &result)
+
+	price = &result.Price
+
+	return price, err
 }

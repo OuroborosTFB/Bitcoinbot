@@ -7,6 +7,6 @@ import (
 )
 
 func GetPrice() (string, error) {
-	p, err := utils.GetApiCall()
-	return fmt.Sprintf("%.2f", p.Last), err
+	price, err := utils.GetPriceAPI()
+	return fmt.Sprintf("%.2f", price.Buy), err
 }

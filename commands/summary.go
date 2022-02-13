@@ -8,7 +8,7 @@ import (
 )
 
 func GetSummary() (string, string, error) {
-	price, err := utils.GetApiCall()
+	price, err := utils.GetPriceAPI()
 	last := price.Last
 	buy := price.Buy
 	his := ((last - buy) / buy) * 100
