@@ -30,8 +30,8 @@ func GetPriceAPI() (*models.Price, error) {
 	return price, err
 }
 
-func GetConvertedPriceAPI(int) (string, error) {
-	resp, err := http.Get("https://blockchain.info/tobtc?currency=USD&value=" + strconv.Itoa(1))
+func GetConvertedPriceAPI(value int) (string, error) {
+	resp, err := http.Get("https://blockchain.info/tobtc?currency=USD&value=" + strconv.Itoa(value))
 	if err != nil {
 		return "", err
 	}

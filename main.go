@@ -1,21 +1,16 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"time"
 
 	"github.com/OuroborosTFB/Bitcoinbot/config"
 	"github.com/OuroborosTFB/Bitcoinbot/handler"
-	"github.com/OuroborosTFB/Bitcoinbot/utils"
 	tb "gopkg.in/tucnak/telebot.v2"
 )
 
 func main() {
-	//startBot()
-	convertedprice, _ := utils.GetConvertedPriceAPI(55165)
-	fmt.Println(convertedprice)
-
+	startBot()
 }
 
 func startBot() {

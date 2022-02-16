@@ -4,8 +4,8 @@ import (
 	"github.com/OuroborosTFB/Bitcoinbot/utils"
 )
 
-func GetConvertedPrice() (string, error) {
-	price, err := utils.GetConvertedPriceAPI(12)
+func GetConvertedPrice(value int) (string, error) {
+	price, err := utils.GetConvertedPriceAPI(value)
 	if err != nil {
 
 	}
