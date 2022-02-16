@@ -13,7 +13,7 @@ import (
 
 func main() {
 	//startBot()
-	convertedprice, _ := utils.GetConvertedPriceAPI(500000)
+	convertedprice, _ := utils.GetConvertedPriceAPI(55165)
 	fmt.Println(convertedprice)
 
 }
@@ -21,8 +21,7 @@ func main() {
 func startBot() {
 
 	b, err := tb.NewBot(tb.Settings{
-		// You can also set custom API URL.
-		// If field is empty it equals to "https://api.telegram.org".
+
 		Token:  config.LoadConfig().Token,
 		Poller: &tb.LongPoller{Timeout: 10 * time.Second},
 	})

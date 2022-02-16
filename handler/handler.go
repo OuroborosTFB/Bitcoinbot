@@ -10,14 +10,12 @@ func LoadHandler(b *tb.Bot) map[string]func(m *tb.Message) {
 
 	commandMap["/price"] = func(m *tb.Message) {
 		res, _ := commands.GetPrice()
-		b.Send(m.Chat, "BTC's Current price is: U$S "+res)
+		b.Send(m.Chat, "Актуальная цена BTC на данный момент в $ "+res)
 	}
 
 	commandMap["/convert"] = func(m *tb.Message) {
-		res, g, _ := commands.GetConvertedPrice()
-		b.Send(m.Chat, "Cтоимость", "BTC в $ на данный момент"+res)
-		b.Send(m.Chat, g)
+		res, _ := commands.GetConvertedPrice()
+		b.Send(m.Chat, "Cтоимость BTC в $ на данный момент "+res)
 	}
-
 	return commandMap
 }
